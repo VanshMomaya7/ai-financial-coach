@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --bg-primary: #252627; */
+    --text-primary: #ffffff;
+    --text-secondary: #9aa0a6;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --input-bg: rgba(255, 255, 255, 0.1);
+  }
+
+  [data-theme="light"] {
+    --bg-primary: #FBFAF8;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5f6368;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --card-bg: rgba(0, 0, 0, 0.05);
+    --input-bg: rgba(0, 0, 0, 0.1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%; /* Safari/iOS */
+    text-size-adjust: 100%;
+  }
+  html,
+:host {
+    -webkit-text-size-adjust: 100%;
+    /* text-size-adjust: 100%; */
+}
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+@layer components {
+  .glass-effect {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+  }
+  
+  .glass-effect-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #F5F3BB 0%, #F5F3BB 50%, #F5F3BB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-border {
+    background: linear-gradient(135deg, #F5F3BB, #F5F3BB, #F5F3BB);
+    padding: 1px;
+    border-radius: 12px;
+  }
+
+  .gradient-border > * {
+    background: var(--bg-primary);
+    border-radius: 11px;
+  }
+
+  .futuristic-card {
+    background: transparent;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+
+  /* More specific selectors to ensure backdrop-filter works */
+  div.feature-card {
+      -webkit-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  .feature-card[class*="feature-card"] {
+      -webkit-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+
+  /* Safari fallback - use a more opaque background when backdrop-filter is not supported */
+  @supports not (backdrop-filter: blur(20px)) {
+    .feature-card {
+      background: rgba(255, 255, 255, 0.1) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    
+    .feature-card:hover {
+      background: rgba(255, 255, 255, 0.15) !important;
+    }
+  }
+
+  .feature-card:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Override any Tailwind background classes */
+  .feature-card.bg-transparent {
+    background: rgba(255, 255, 255, 0.03) !important;
+  }
+
+  .feature-card.bg-white {
+    background: rgba(255, 255, 255, 0.03) !important;
+  }
+
+  .feature-card.bg-black {
+    background: rgba(255, 255, 255, 0.03) !important;
+  }
+
+  .feature-card.bg-gray-100,
+  .feature-card.bg-gray-200,
+  .feature-card.bg-gray-300,
+  .feature-card.bg-gray-400,
+  .feature-card.bg-gray-500,
+  .feature-card.bg-gray-600,
+  .feature-card.bg-gray-700,
+  .feature-card.bg-gray-800,
+  .feature-card.bg-gray-900 {
+    background: rgba(255, 255, 255, 0.03) !important;
+  }
+
+  /* Make icon containers visible */
+  .feature-card .w-16 {
+    background: transparent !important;
+  }
+
+  .feature-card .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, #F5F3BB, #F5F3BB) !important;
+  }
+
+  .chart-container {
+    background: linear-gradient(145deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.05));
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+}
