@@ -9,6 +9,9 @@ A sleek, Apple-inspired landing page for the AI Financial Coach product, built w
 - **Smooth animations**: Framer Motion powered transitions and micro-interactions
 - **Modern typography**: Elegant font hierarchy with bold headlines and light subtext
 - **Premium color scheme**: Blue accent color with monochrome/white theme
+- **Glass morphism effects**: Beautiful backdrop blur and transparency effects
+- **Three.js particle background**: Interactive animated background
+- **Dark/Light theme toggle**: Seamless theme switching
 
 ## 🚀 Quick Start
 
@@ -21,8 +24,8 @@ A sleek, Apple-inspired landing page for the AI Financial Coach product, built w
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd ai-financial-coach-landing
+git clone https://github.com/VanshMomaya7/ai-financial-coach.git
+cd ai-financial-coach
 ```
 
 2. Install dependencies:
@@ -35,41 +38,43 @@ npm install
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:3000`
+4. Open your browser and navigate to `http://localhost:5173`
 
 ## 📁 Project Structure
 
 ```
 ├── src/
 │   ├── components/
-│   │   └── LandingPage.jsx    # Main landing page component
-│   ├── App.jsx                # Root app component
-│   ├── main.jsx              # React entry point
-│   └── index.css             # Global styles and TailwindCSS
-├── public/                   # Static assets
-├── index.html               # HTML template
-├── package.json             # Dependencies and scripts
-├── tailwind.config.js       # TailwindCSS configuration
-├── postcss.config.js        # PostCSS configuration
-└── vite.config.js          # Vite build configuration
+│   │   ├── LandingPage.jsx      # Main landing page component
+│   │   └── ParticleBackground.jsx # Three.js particle background
+│   ├── App.jsx                  # Root app component
+│   ├── main.jsx                # React entry point
+│   └── index.css               # Global styles and TailwindCSS
+├── public/                     # Static assets
+├── index.html                 # HTML template
+├── package.json               # Dependencies and scripts
+├── tailwind.config.js         # TailwindCSS configuration
+├── postcss.config.js          # PostCSS configuration
+└── vite.config.js            # Vite build configuration
 ```
 
 ## 🎯 Landing Page Sections
 
-1. **Hero Section**: Bold headline with product mockup and primary CTA
-2. **Problem Statement**: Why traditional financial advice fails
-3. **Solution Overview**: AI Financial Coach features and benefits
-4. **How It Works**: 3-step process explanation
-5. **Benefits**: Why users will love the product
-6. **Trust & Security**: Data protection and privacy assurance
-7. **Final CTA**: Email capture form for waitlist
-8. **Footer**: Simple navigation and branding
+1. **Hero Section**: Bold headline with Three.js particle background and primary CTA
+2. **Features Section**: Glass morphism cards with AI-powered features
+3. **Charts Section**: Interactive financial charts with Recharts
+4. **Agentic AI Section**: AI coach visualization and capabilities
+5. **Final CTA**: Email capture form for waitlist
+6. **Footer**: Simple navigation and branding
 
 ## 🛠️ Technologies Used
 
 - **React 18**: Modern React with hooks and functional components
 - **TailwindCSS**: Utility-first CSS framework for rapid styling
 - **Framer Motion**: Production-ready motion library for React
+- **GSAP**: Professional-grade animations and scroll triggers
+- **Three.js**: 3D graphics and particle systems
+- **Recharts**: Beautiful, composable charting library
 - **Lucide React**: Beautiful, customizable icons
 - **Vite**: Fast build tool and development server
 
@@ -77,18 +82,23 @@ npm run dev
 
 ### Colors
 The color scheme can be customized in `tailwind.config.js`:
-- Primary blue: `primary-600` (#2563eb)
-- Gray scale: `gray-50` to `gray-900`
+- Primary accent: `#F5F3BB` (SeaSalt yellow)
+- Granite theme: Dark/Light mode support
+- Purple gradients: For chart elements
 
 ### Animations
 Custom animations are defined in `tailwind.config.js`:
 - `fade-in`: Opacity transition
 - `slide-up`: Slide up with opacity
 - `float`: Gentle floating animation
+- `glow`: Pulsing glow effect
+- `pulse-slow`: Slow pulse animation
 
-### Typography
-Uses Apple's system font stack:
-- `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`
+### Glass Morphism
+Feature cards use glass morphism effects:
+- `backdrop-filter: blur(20px)`
+- Semi-transparent backgrounds
+- Smooth borders and shadows
 
 ## 📱 Responsive Design
 
